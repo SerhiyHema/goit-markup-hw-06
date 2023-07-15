@@ -57,11 +57,33 @@ button {
 /* Base styles */
 
 .container {
-  width: 1158px;
+  min-width: 320px;
+  max-width: 428px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  outline: 2px solid red;
+  outline-offset: -2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    outline: 2px solid red;
+    outline-offset: -2px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    outline: 2px solid red;
+    outline-offset: -2px;
+  }
 }
 
 /*header*/
@@ -231,8 +253,22 @@ button {
 
 /*one*/
 .onesection {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media only screen and (min-width: 768px) {
+  .onesection {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .onesection {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 .visually-hidden {
@@ -250,17 +286,50 @@ button {
 }
 
 .onesection-list {
-  gap: 24px;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
 }
+
+@media only screen and (min-width: 768px) {
+  .onesection-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .onesection-list {
+    gap: 24px;
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
 .onesection-item {
-  width: 264px;
+}
+
+@media only screen and (min-width: 768px) {
+  .onesection-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .onesection-item {
+    width: 264px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .onesection-item:not(:last-child) {
+    padding-bottom: 72px;
+  }
 }
 
 .onesection-subtitle {
   margin-bottom: 8px;
+  text-align: center;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -276,16 +345,28 @@ button {
 }
 
 .spdt-thumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 112px;
-  background-color: #f4f4fd;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  display: none;
+}
+
+@media only screen and (min-width: 1158px) {
+  .spdt-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
 }
 
 /*two*/
+@media only screen and (max-width: 1157.9px) {
+  .two-section {
+    display: none;
+  }
+}
+
 .two-section {
   padding-bottom: 120px;
 }
@@ -308,9 +389,16 @@ button {
 
 /*three*/
 .three-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
   background-color: var(--accent-btbg);
+}
+
+@media only screen and (min-width: 1158px) {
+  .three-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 .section-title {
@@ -323,9 +411,13 @@ button {
 }
 
 .three-list {
+  list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 24px;
-  justify-content: space-between;
+  row-gap: 72px;
+  justify-content: center;
 }
 
 .subtitle-team {
@@ -392,8 +484,15 @@ button {
 
 /*four*/
 .four-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media only screen and (min-width: 1158px) {
+  .four-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 .four-section-title {
@@ -406,12 +505,30 @@ button {
 
 .client-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+  row-gap: 72px;
 }
 
 .four-item {
-  width: calc((100% - 120px) / 6);
+  width: calc((100% - 120px) / 2);
   height: 88px;
+}
+
+@media only screen and (min-width: 768px) {
+  .four-item {
+    width: calc((100% - 120px) / 3);
+    height: 88px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .four-item {
+    width: calc((100% - 120px) / 6);
+    height: 88px;
+  }
 }
 
 .four-network {
@@ -550,25 +667,52 @@ button {
 
 /*footer*/
 .footer {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 
   background: #2e2f42;
 }
 
+@media only screen and (min-width: 1158px) {
+  .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
 .footer-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
+  gap: 72px 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-container {
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer-container {
+    display: flex;
+    align-items: baseline;
+  }
 }
 
 .footer-logo-p {
-  margin-right: 120px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer-logo-p {
+    margin-right: 120px;
+  }
 }
 
 .footer-logo {
-  display: inline-block;
+  display: block;
   margin-bottom: 16px;
-
+  text-align: center;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -576,6 +720,21 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer-logo {
+    display: inline-block;
+    margin-bottom: 16px;
+
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #4d5ae5;
+  }
 }
 
 .logo-lightground {
@@ -595,12 +754,26 @@ button {
 }
 
 .footer-social {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-light-cl);
   margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer-social-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--main-light-cl);
+    margin-bottom: 16px;
+  }
 }
 
 .footer-social-list {
@@ -638,6 +811,7 @@ button {
 
 .footer-bottom-text {
   margin-bottom: 16px;
+  text-align: center;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
