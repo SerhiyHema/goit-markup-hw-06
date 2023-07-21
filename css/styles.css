@@ -107,7 +107,9 @@ button {
   z-index: 999;
   height: 100vh;
   background-color: #ffffff;
-  padding: 24px;
+  padding-top: 80px;
+  padding-left: 40px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -187,7 +189,6 @@ button {
   display: flex;
 
   gap: 56px;
-  margin-top: 40px;
 }
 
 .mob-icon-team {
@@ -376,6 +377,9 @@ button {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+  }
+  .header-contacts {
+    font-size: 16px;
   }
 }
 
@@ -582,12 +586,19 @@ button {
 .onesection-subtitle {
   margin-bottom: 8px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--accent-cl);
 }
+
+@media only screen and (min-width: 768px) {
+  .onesection-subtitle {
+    text-align: start;
+  }
+}
+
 @media only screen and (min-width: 1158px) {
   .onesection-subtitle {
     font-size: 20px;
@@ -598,6 +609,7 @@ button {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  font-weight: 500;
   color: var(--accent-hh);
 }
 
@@ -765,18 +777,24 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  column-gap: 24px;
+  column-gap: 16px;
   row-gap: 72px;
 }
 
+@media only screen and (min-width: 768px) {
+  .client-list {
+    column-gap: 24px;
+  }
+}
+
 .four-item {
-  width: calc((100% - 120px) / 2);
+  width: 190px;
   height: 88px;
 }
 
 @media only screen and (min-width: 768px) {
   .four-item {
-    width: calc((100% - 120px) / 3);
+    width: 168px;
     height: 88px;
   }
 }
@@ -950,7 +968,6 @@ button {
     column-gap: 24px;
     padding-left: 108px;
     padding-right: 108px;
-    margin-left: 0 auto;
   }
 }
 
@@ -1133,7 +1150,7 @@ button {
 }
 
 .subscribe-form-input {
-  width: 398px;
+  width: 100%;
   height: 40px;
   border: 1px solid #ffffff;
   background-color: transparent;
@@ -1163,7 +1180,7 @@ button {
   height: 40px;
   display: flex;
   margin-top: 16px;
-  margin-left: 131px;
+  margin-left: auto;
   margin-right: auto;
   justify-content: center;
   align-items: center;
